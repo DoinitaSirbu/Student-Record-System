@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1263.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studentmanagements.dashboardController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="670.0" prefWidth="1100.0">
+         <children>
+            <BorderPane layoutX="65.0" layoutY="148.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="33.0" prefWidth="1100.0" styleClass="semi-top-form" stylesheets="@dashboard-style.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-6.0" layoutY="-77.0" prefHeight="35.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@dashboard-style.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="22.0" fitWidth="43.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/graduate.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="29.0" layoutY="5.0" text="Student Management System">
+                                 <font>
+                                    <Font name="Tahoma" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="close" layoutX="1027.0" mnemonicParsing="false" onAction="#close" prefHeight="20.0" prefWidth="64.0" styleClass="close" stylesheets="@dashboard-style.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="minimize" layoutX="1116.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="69.0" styleClass="minimize" stylesheets="@dashboard-style.css" AnchorPane.topAnchor="2.0" />
+                              <ImageView fitHeight="20.0" fitWidth="26.0" layoutX="1138.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/minus.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="758.0" prefWidth="256.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-7.0" layoutY="110.0" prefHeight="558.0" prefWidth="215.0" styleClass="nav-form" stylesheets="@dashboard-style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <ImageView fitHeight="90.0" fitWidth="127.0" layoutX="79.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/user(4).png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="80.0" layoutY="115.0" stylesheets="@styles.css" text="Welcome," textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="username" layoutX="81.0" layoutY="139.0" prefHeight="24.0" prefWidth="96.0" stylesheets="@styles.css" text="Teo" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB Demi Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="119.0" layoutX="117.0" layoutY="196.0" startX="-94.0" stroke="WHITE" />
+                              <Button fx:id="home_btn" layoutX="23.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="52.0" prefWidth="212.0" styleClass="nav-btn" stylesheets="@dashboard-style.css" text="Home" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="26.0" fitWidth="38.0" layoutX="42.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/house.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="addStudents_btn" layoutX="23.0" layoutY="287.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="52.0" prefWidth="212.0" styleClass="nav-btn" stylesheets="@dashboard-style.css" text="Add Students" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="availableCourse_btn" layoutX="24.0" layoutY="372.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="52.0" prefWidth="212.0" styleClass="nav-btn" stylesheets="@dashboard-style.css" text="Available Courses" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="26.0" fitWidth="38.0" layoutX="42.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/add-button.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="26.0" fitWidth="38.0" layoutX="40.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/icons8-books-48.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="studentGrade_btn" layoutX="24.0" layoutY="452.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="52.0" prefWidth="212.0" styleClass="nav-btn" stylesheets="@dashboard-style.css" text="Grades of Students" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="26.0" fitWidth="38.0" layoutX="40.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/checklist.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="logout" layoutX="10.0" layoutY="686.0" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="120.0" styleClass="logout" stylesheets="@dashboard-style.css" />
+                              <Label layoutX="29.0" layoutY="700.0" text="Sign out" textFill="WHITE">
+                                 <font>
+                                    <Font name="Sitka Text" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" layoutX="22.0" layoutY="117.0" prefHeight="751.0" prefWidth="1045.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="758.0" prefWidth="1007.0" stylesheets="@dashboard-style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="10.0" layoutY="240.0" prefHeight="507.0" prefWidth="439.0" stylesheets="@dashboard-style.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <BarChart fx:id="home_totalEnrolledChart" layoutX="-143.0" layoutY="-39.0" prefHeight="361.0" prefWidth="393.0" title="Total Enrolled Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="463.0" layoutY="236.0" prefHeight="255.0" prefWidth="536.0" stylesheets="@dashboard-style.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <LineChart fx:id="home_totalFemaleChart" layoutX="-98.0" layoutY="-135.0" prefHeight="265.0" prefWidth="544.0" title="Enrolled Female Chart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </LineChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="463.0" layoutY="503.0" prefHeight="244.0" prefWidth="537.0" stylesheets="@dashboard-style.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <LineChart fx:id="home_totalMaleChart" layoutX="-70.0" layoutY="-157.0" prefHeight="243.0" prefWidth="537.0" title="Enrolled Male Chart" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </LineChart>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="24.0" layoutY="24.0" prefHeight="194.0" prefWidth="966.0" stylesheets="@dashboard-style.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="28.0" layoutY="14.0" prefHeight="171.0" prefWidth="291.0" styleClass="card" stylesheets="@dashboard-style.css">
+                                       <children>
+                                          <ImageView fitHeight="78.0" fitWidth="101.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@image/users.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="63.0" layoutY="111.0" text="Total Enrolled Students" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="home_totalEnrolled" alignment="CENTER_RIGHT" layoutX="60.0" layoutY="14.0" prefHeight="27.0" prefWidth="151.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="661.0" layoutY="14.0" prefHeight="171.0" prefWidth="291.0" styleClass="card" stylesheets="@dashboard-style.css">
+                                       <children>
+                                          <ImageView fitHeight="78.0" fitWidth="101.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@image/male.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="71.0" layoutY="111.0" text="Enrolled Male Students" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="home_totalMale" alignment="CENTER_RIGHT" layoutX="59.0" layoutY="14.0" prefHeight="27.0" prefWidth="165.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="354.0" layoutY="14.0" prefHeight="171.0" prefWidth="291.0" styleClass="card" stylesheets="@dashboard-style.css">
+                                       <children>
+                                          <ImageView fitHeight="78.0" fitWidth="101.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@image/female.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="53.0" layoutY="111.0" text="Enrolled Female Students" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="home_totalFemale" alignment="CENTER_RIGHT" layoutX="57.0" layoutY="13.0" prefHeight="27.0" prefWidth="170.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="addStudents_form" layoutX="-15.0" layoutY="88.0" prefHeight="558.0" prefWidth="885.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="758.0" prefWidth="1007.0" stylesheets="@dashboard-style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="471.0" prefWidth="976.0" stylesheets="@dashboard-style.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <TableView fx:id="addStudents_tableView" layoutX="14.0" layoutY="10.0" onMouseClicked="#addStudentsSelect" prefHeight="471.0" prefWidth="976.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                              <TableColumn fx:id="addStudents_col_studentNum" prefWidth="82.0" text="StudentId" />
+                                              <TableColumn fx:id="addStudents_col_year" prefWidth="79.0" text="Year" />
+                                                <TableColumn fx:id="addStudents_col_course" prefWidth="146.0" text="Course" />
+                                                <TableColumn fx:id="addStudents_col_firstName" prefWidth="142.0" text="First Name" />
+                                                <TableColumn fx:id="addStudents_col_lastName" prefWidth="145.0" text="Last Name" />
+                                                <TableColumn fx:id="addStudents_col_gender" prefWidth="124.0" text="Gender" />
+                                                <TableColumn fx:id="addStudents_col_birth" prefWidth="133.0" text="Birth Date" />
+                                                <TableColumn fx:id="addStudents_col_status" prefWidth="122.0" text="Status" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="34.0" layoutY="509.0" text="StudentId:" textFill="#723f6b">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="addStudents_studentNum" layoutX="183.0" layoutY="514.0" prefHeight="25.0" prefWidth="151.0" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <ComboBox fx:id="addStudents_year" layoutX="183.0" layoutY="554.0" onAction="#addStudentsYearList" prefWidth="150.0" promptText="Choose" styleClass="textfield" />
+                                    <ComboBox fx:id="addStudents_course" layoutX="183.0" layoutY="595.0" onAction="#addStudentsCourseList" prefWidth="150.0" promptText="Choose" styleClass="textfield" />
+                                    <Label layoutX="34.0" layoutY="549.0" text="Year:" textFill="#723f6b">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="34.0" layoutY="590.0" text="Course:" textFill="#723f6b">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="34.0" layoutY="631.0" text="First Name:" textFill="#723f6b">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="addStudents_firstName" layoutX="183.0" layoutY="637.0" prefHeight="25.0" prefWidth="151.0" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <Label layoutX="409.0" layoutY="514.0" text="Last Name:" textFill="#723f6b">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="addStudents_lastName" layoutX="556.0" layoutY="514.0" prefHeight="25.0" prefWidth="150.0" styleClass="textfield" />
+                                    <ComboBox fx:id="addStudents_gender" layoutX="556.0" layoutY="556.0" onAction="#addStudentsGenderList" prefWidth="150.0" promptText="Choose" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <Label layoutX="409.0" layoutY="556.0" text="Gender:" textFill="#723f6b">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="409.0" layoutY="596.0" text="Birth Date:" textFill="#723f6b">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="addStudents_birth" layoutX="555.0" layoutY="596.0" prefHeight="25.0" prefWidth="152.0" styleClass="textfield" />
+                                    <ComboBox fx:id="addStudents_status" layoutX="556.0" layoutY="637.0" onAction="#addStudentsStatusList" prefWidth="150.0" promptText="Choose" styleClass="textfield" />
+                                    <Label layoutX="409.0" layoutY="637.0" text="Status:" textFill="#723f6b">
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane layoutX="776.0" layoutY="505.0" prefHeight="140.0" prefWidth="120.0" stylesheets="@dashboard-style.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fx:id="addStudents_imageView" fitHeight="149.0" fitWidth="133.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="addStudents_insertBtn" layoutX="-6.0" layoutY="109.0" mnemonicParsing="false" onAction="#addStudentsInsertImage" prefHeight="40.0" prefWidth="137.0" styleClass="insert-btn" stylesheets="@dashboard-style.css" text="Insert" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="addStudents_addBtn" layoutX="834.0" layoutY="686.0" mnemonicParsing="false" onAction="#addStudentsAdd" prefHeight="45.0" prefWidth="120.0" styleClass="add-btn" stylesheets="@dashboard-style.css" text="Add" />
+                                    <Button fx:id="addStudents_updateBtn" layoutX="697.0" layoutY="686.0" mnemonicParsing="false" onAction="#addStudentsUpdate" prefHeight="45.0" prefWidth="120.0" styleClass="update-btn" stylesheets="@dashboard-style.css" text="Update" />
+                                    <Button fx:id="addStudents_deleteBtn" layoutX="563.0" layoutY="686.0" mnemonicParsing="false" onAction="#addStudentsDelete" prefHeight="45.0" prefWidth="120.0" styleClass="delete-btn" stylesheets="@dashboard-style.css" text="Delete" />
+                                    <Button fx:id="addStudents_clearBtn" layoutX="423.0" layoutY="686.0" mnemonicParsing="false" onAction="#addStudentsClear" prefHeight="45.0" prefWidth="120.0" styleClass="clear-btn" stylesheets="@dashboard-style.css" text="Clear" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="availableCourse_form" layoutX="31.0" layoutY="42.0" prefHeight="558.0" prefWidth="885.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="732.0" prefWidth="302.0" stylesheets="@dashboard-style.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="62.0" layoutY="111.0" text="Course:">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="availableCourse_course" layoutX="144.0" layoutY="110.0" prefHeight="25.0" prefWidth="137.0" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <Label layoutX="31.0" layoutY="154.0" text="Description:">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="availableCourse_description" layoutX="144.0" layoutY="153.0" prefHeight="25.0" prefWidth="137.0" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <Label layoutX="58.0" layoutY="197.0" text="Degree:">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="availableCourse_degree" layoutX="144.0" layoutY="196.0" prefHeight="25.0" prefWidth="137.0" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <Button fx:id="availableCourse_addBtn" layoutX="39.0" layoutY="307.0" mnemonicParsing="false" onAction="#availableCourseAdd" prefHeight="50.0" prefWidth="100.0" styleClass="add-btn" stylesheets="@dashboard-style.css" text="Add" />
+                                    <Button fx:id="availableCourse_updateBtn" layoutX="178.0" layoutY="307.0" mnemonicParsing="false" onAction="#availableCourseUpdate" prefHeight="50.0" prefWidth="100.0" styleClass="update-btn" stylesheets="@dashboard-style.css" text="Update" />
+                                    <Button fx:id="availableCourse_clearBtn" layoutX="39.0" layoutY="372.0" mnemonicParsing="false" onAction="#availableCourseClear" prefHeight="50.0" prefWidth="100.0" styleClass="clear-btn" stylesheets="@dashboard-style.css" text="Clear" />
+                                    <Button fx:id="availableCourse_deleteBtn" layoutX="178.0" layoutY="372.0" mnemonicParsing="false" onAction="#availableCourseDelete" prefHeight="50.0" prefWidth="100.0" styleClass="delete-btn" stylesheets="@dashboard-style.css" text="Delete" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="327.0" layoutY="14.0" prefHeight="734.0" prefWidth="666.0" stylesheets="@dashboard-style.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="availableCourse_tableView" layoutX="8.0" layoutY="8.0" onMouseClicked="#availableCourseSelect" prefHeight="532.0" prefWidth="576.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="availableCourse_col_course" prefWidth="162.0" text="Course" />
+                                        <TableColumn fx:id="availableCourse_col_description" prefWidth="301.0" text="Description" />
+                                          <TableColumn fx:id="availableCourse_col_degree" prefWidth="200.0" text="Degree" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="studentGrade_form" layoutX="112.0" layoutY="101.0" prefHeight="558.0" prefWidth="885.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="729.0" prefWidth="290.0" stylesheets="@dashboard-style.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="studentGrade_studentNum" layoutX="120.0" layoutY="49.0" prefHeight="25.0" prefWidth="153.0" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <Label layoutX="26.0" layoutY="52.0" text="Student:">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="44.0" layoutY="95.0" text="Year:">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="studentGrade_year" layoutX="118.0" layoutY="92.0" prefHeight="25.0" prefWidth="155.0" styleClass="label-info" stylesheets="@dashboard-style.css" />
+                                    <Label layoutX="36.0" layoutY="139.0" prefHeight="20.0" prefWidth="53.0" text="Course:">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="studentGrade_course" layoutX="119.0" layoutY="136.0" prefHeight="25.0" prefWidth="154.0" styleClass="label-info" stylesheets="@dashboard-style.css" />
+                                    <TextField fx:id="studentGrade_firstSem" layoutX="119.0" layoutY="179.0" prefHeight="25.0" prefWidth="153.0" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <Label layoutX="21.0" layoutY="183.0" text="First Sem:">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="studentGrade_secondSem" layoutX="120.0" layoutY="227.0" prefHeight="25.0" prefWidth="152.0" styleClass="textfield" stylesheets="@dashboard-style.css" />
+                                    <Label layoutX="4.0" layoutY="231.0" text="Second Sem:">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="studentGrade_clearBtn" layoutX="16.0" layoutY="315.0" mnemonicParsing="false" onAction="#studentGradesClear" prefHeight="50.0" prefWidth="100.0" styleClass="clear-btn" stylesheets="@dashboard-style.css" text="Clear" />
+                                    <Button fx:id="studentGrade_updateBtn" layoutX="158.0" layoutY="315.0" mnemonicParsing="false" onAction="#studentGradesUpdate" prefHeight="50.0" prefWidth="100.0" styleClass="update-btn" stylesheets="@dashboard-style.css" text="Update" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="315.0" layoutY="13.0" prefHeight="734.0" prefWidth="681.0" stylesheets="@dashboard-style.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="studentGrade_tableView" layoutX="-1.0" layoutY="-3.0" onMouseClicked="#studentGradesSelect" prefHeight="533.0" prefWidth="576.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="studentGrade_col_studentNum" prefWidth="117.0" text="Student" />
+                                        <TableColumn fx:id="studentGrade_col_year" prefWidth="105.0" text="Year" />
+                                          <TableColumn fx:id="studentGrade_col_course" prefWidth="107.0" text="Course" />
+                                          <TableColumn fx:id="studentGrade_col_firstSem" prefWidth="135.0" text="First Sem" />
+                                          <TableColumn fx:id="studentGrade_col_secondSem" prefWidth="116.0" text="Second Sem" />
+                                          <TableColumn fx:id="studentGrade_col_final" prefWidth="119.0" text="Final" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,0 +1,74 @@
+.left-form{
+    -fx-background-color:linear-gradient(to bottom right, #94bbe9, #ff9f9c);
+    -fx-border-color:#000;
+    -fx-border-width:.4px 0px .4px .4px;
+}
+
+.right-form{
+    -fx-background-color:#fff;
+    -fx-border-color:#000;
+    -fx-border-width:.4px .4px .4px 0px;
+}
+
+.close{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+.close:hover{
+    -fx-background-color:#ff9f9c;
+}
+
+.textfield{
+    -fx-background-color:linear-gradient(to bottom, #efefef, #eee);
+    -fx-background-radius:5px;
+    -fx-border-color:#000;
+    -fx-border-width:.2px;
+    -fx-border-radius:5px;
+    -fx-font-size:13px;
+    -fx-font-family:"Tahoma";
+}
+.textfield:focused{
+    -fx-background-color:#fff;
+    -fx-border-color:linear-gradient(to bottom right, #2d658c, #2ca772);
+    -fx-border-width:.8px;
+}
+
+.login-btn{
+    -fx-background-color:linear-gradient(to bottom right, #94bbe9, #ff9f9c);
+    -fx-background-radius:4px;
+    -fx-cursor:hand;
+    -fx-text-fill:#fff;
+    -fx-font-size:14px;
+    -fx-font-family:"Berlin Sans FB Demi";
+}
+.login-btn:hover{
+    -fx-background-color:linear-gradient(to bottom, #277bd0, #1b6fa4);
+}
+.text-modern1 {
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -fx-font-size: 20px;
+    -fx-fill: #f2f2f2 !important;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 10, 0, 0, 1);
+}
+
+.check-box {
+    -fx-padding: 0.7em; /* Padding around the content */
+}
+.check-box .box {
+    /* Styles for the box part of the CheckBox */
+    -fx-background-color: transparent; /* Transparent background */
+    -fx-border-color: #94bbe9; /* Border color */
+    -fx-border-radius: 5; /* Border radius for rounded corners */
+}
+
+
+
+
+
+
+
+
+
+
+

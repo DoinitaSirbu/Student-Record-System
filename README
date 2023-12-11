@@ -1,0 +1,43 @@
+Student Management System
+--Overview--
+The Student Management System is a JavaFX application designed for managing student data, courses, and grades. It provides features for administrators to log in, view student information, manage courses, and update student grades.
+
+--Table of Contents--
+*Features
+*Getting Started
+*Dependencies
+*Database Setup
+*How to Use
+*Project Structure
+
+--Features--
+Login System: Administrators can log in to access the system.
+Student Management: View, add, update, and delete student records.
+Course Management: Add, update, and delete courses.
+Grades Management: Update and view student grades.
+Responsive UI: The application has a user-friendly interface built using JavaFX.
+
+--Getting Started--
+*Prerequisites
+Java Development Kit (JDK)
+MySQL Database
+*Dependencies
+JavaFX
+MySQL Connector/J
+*Database Setup
+Create a MySQL database named student.
+Import the SQL scripts from the database-scripts folder to set up the necessary tables.
+
+--How to Use--
+1.Run the HelloApplication class to start the application.
+2.Log in using administrator credentials.
+3.Navigate through the different sections to manage students, courses, and grades.
+
+--Project Structure--
+-com.example.studentmanagements:
+    HelloApplication: Main class to launch the application.
+    HelloController: Controller class for the main view.
+    DatabaseConnection: Handles database connectivity.
+    getData: Utility class for storing user-related data.
+    courseData: Data class representing course information.
+    studentData: Data class representing student information.
